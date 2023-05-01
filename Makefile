@@ -5,9 +5,13 @@ INC_DIR = .
 NAME 	= libft.a
 INCLUDES = $(INC_DIR)/libft.h
 SRC = 	$(SRC_DIR)/ft_strlen.c \
-	$(SRC_DIR)/ft_isalpha.c	
+	$(SRC_DIR)/ft_isalpha.c \
+	$(SRC_DIR)/ft_isalnum.c	\
+	$(SRC_DIR)/ft_isdigit.c
 OBJS =  $(OBJ_DIR)/ft_strlen.o \
-	$(OBJ_DIR)/ft_isalpha.o
+	$(OBJ_DIR)/ft_isalpha.o \
+	$(OBJ_DIR)/ft_isalnum.o \
+	$(OBJ_DIR)/ft_isdigit.o
 	
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -I$(INC_DIR)
@@ -34,4 +38,5 @@ fclean: clean
 re: fclean all
 
 .PHONY: re fclean clean all
+
 

@@ -5,6 +5,8 @@ int	ft_isalpha(char	*str)
 	int	i;
 
 	i = 0;
+	if (str[i] == '\0')
+		return (1);
 	while (str[i])
 	{
 		if ((str[i] < 'a' || str[i] > 'z') &&
