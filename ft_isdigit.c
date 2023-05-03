@@ -1,15 +1,19 @@
-int	ft_isdigit(char *str)
-{
-	int	i;
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dionmart <dionmart@student.42barcel>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/03 11:14:50 by dionmart          #+#    #+#             */
+/*   Updated: 2023/05/03 13:13:54 by dionmart         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+#include "libft.h"
 
-	i = 0;
-	if (str[i] == '\0')
-		return (1);
-	while (str[i])
-	{
-		if ((str[i] < '0') || (str[i] > '9'))
-			return (0);
-		i++;
-	}
+int	ft_isdigit(int num)
+{
+	if ((num < '0') || (num > '9'))
+		return (0);
 	return (1);
 }

@@ -1,6 +1,19 @@
-int	ft_strlen(char	*str)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dionmart <dionmart@student.42barcel>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/03 11:15:15 by dionmart          #+#    #+#             */
+/*   Updated: 2023/05/03 13:22:57 by dionmart         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+#include "libft.h"
+
+size_t	ft_strlen(const char	*str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (*str)
@@ -10,4 +23,3 @@ int	ft_strlen(char	*str)
 	}
 	return (i);
 }
-
