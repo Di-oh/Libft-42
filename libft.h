@@ -6,7 +6,7 @@
 /*   By: dionmart <dionmart@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 11:43:16 by dionmart          #+#    #+#             */
-/*   Updated: 2023/05/04 15:22:21 by dionmart         ###   ########.fr       */
+/*   Updated: 2023/05/05 19:08:34 by dionmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -26,4 +26,5 @@ void	ft_bzero(void *s, size_t n);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
 char	*ft_strchr(const char *s, int c);
+char	*ft_strrchr(const char *s, int c);
 #endif
