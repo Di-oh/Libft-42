@@ -1,4 +1,5 @@
 #include "libft.h"
+#include <stdio.h>
 
 int ft_strncmp(const char *s1, const char *s2, size_t n)
 {
@@ -22,6 +23,6 @@ int	main(void)
 	printf("ft_strncmp %d\n", ft_strncmp("Hola","Hola ", 4));
 	printf("ft_strncmp %d\n", ft_strncmp("Hola", "Holi", 4));
 	printf("ft_strncmp %d\n", ft_strncmp(" ", "\0", 5));
-	printf("ft_strncmp %d\n", ft_strncmp("hola", "hola", 5))
+	printf("ft_strncmp %d\n", ft_strncmp("hola", "hola", 5));
 	return (0);
 }
