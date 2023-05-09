@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dionmart <dionmart@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/08 15:35:44 by dionmart          #+#    #+#             */
-/*   Updated: 2023/05/09 11:08:55 by dionmart         ###   ########.fr       */
+/*   Created: 2023/05/09 12:32:40 by dionmart          #+#    #+#             */
+/*   Updated: 2023/05/09 13:38:10 by dionmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
-{
-	char	*pt_src;
-	char	*pt_dst;
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
+{	
+	unsigned int	i;
+	unsigned int	j;
+	char			*dest;
 
-	pt_src = (char *)src;
-	pt_dst = (char *)dst;
-	if (src < dst)
+	i = 0;
+	dest = dst;
+	if (src[i] != '\0')
+		return (dstsize + ft_strlen(src));
+	j = ft_strlen(dst);
+	while ((j + i < (dstsize - 1)) && src[i] != '\0')
 	{
-		while (len > 0)
-		{
-			pt_dst[len - 1] = pt_src[len - 1];
-			len--;
-		}
-		dst = (void *)pt_dst;
+		dst[j + i + 1] = src[i];
+		i++;
+		if (src[i] != '\0')
+			return (dstsize + ft_strlen(src));
 	}
-	else
-		dst = ft_memcpy(dst, src, len);
-	return (dst);
+	return (ft_strlen(dst) + ft_strlen(src));
 }
