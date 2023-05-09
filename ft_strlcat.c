@@ -9,7 +9,8 @@
 /*   Updated: 2023/05/09 13:38:10 by dionmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
+#include <stdio.h>
+#include <string.h>
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {	
@@ -20,14 +21,21 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	i = 0;
 	dest = dst;
 	if (src[i] != '\0')
-		return (dstsize + ft_strlen(src));
-	j = ft_strlen(dst);
+		return (dstsize + strlen(src));
+	j = strlen(dst);
 	while ((j + i < (dstsize - 1)) && src[i] != '\0')
 	{
-		dst[j + i + 1] = src[i];
+		dst[j + i] = src[i];
 		i++;
+		j++;
 		if (src[i] != '\0')
-			return (dstsize + ft_strlen(src));
+			return (dstsize + strlen(src));
 	}
-	return (ft_strlen(dst) + ft_strlen(src));
+	return (strlen(dest) + strlen(src));
+}
+
+int	main(void)
+{
+	printf(" %li\n", ft_strlcat("Hola", "Adios",5));
+	return (0);
 }
