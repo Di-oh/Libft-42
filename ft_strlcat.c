@@ -6,7 +6,7 @@
 /*   By: dionmart <dionmart@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 12:32:40 by dionmart          #+#    #+#             */
-/*   Updated: 2023/05/09 18:44:25 by dionmart         ###   ########.fr       */
+/*   Updated: 2023/05/10 11:59:52 by dionmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -15,21 +15,24 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {	
 	unsigned int	i;
 	unsigned int	j;
+	unsigned int	x;
+	size_t			ret;
 
-	if (src == NULL)
-		return (0);
-  if (dstsize == 0)
-    return (ft_strlen(src));
 	i = 0;
 	j = ft_strlen(dst);
-	while (src[i] && i + j < dstsize -1 )
-//  while (src[i] && j < dstsize - 1)
+	x = ft_strlen(src);
+	if (j < dstsize)
+		ret = (x + j);
+	else
+		ret = (x + dstsize);
+	while (src[i] && j + 1 < dstsize)
 	{
-		dst[j + i] = src[i];
-		i++; 
+		dst[j] = src[i];
+		i++;
+		j++;
 	}
-	dst[i + j] = '\0';
-  return (j + ft_strlen(src));
+	dst[j] = '\0';
+	return (ret);
 }
 /*
 int	main(void)
