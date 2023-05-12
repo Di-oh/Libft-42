@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
+#include <ctype.h>
 
 int	ft_isdigit(int num)
 {
@@ -17,3 +18,11 @@ int	ft_isdigit(int num)
 		return (0);
 	return (1);
 }
+/*
+int     main(void)
+{
+        printf("el char es digit: %i\n", ft_isdigit(50));
+        printf("el char es digit: %i\n", isdigit(50));
+
+        return (0);
+}*/

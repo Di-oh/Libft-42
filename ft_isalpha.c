@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
+#include <ctype.h>
 
 int	ft_isalpha(int num)
 {
@@ -18,3 +19,11 @@ int	ft_isalpha(int num)
 	else
 		return (1);
 }
+/*
+int	main(void)
+{
+	printf("el char es alphanumerico: %i\n", ft_isalpha(65));
+	printf("el char es alphanumerico: %i\n", isalpha(65));
+
+	return (0);
+}*/
