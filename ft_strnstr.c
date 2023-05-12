@@ -10,105 +10,58 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-#include <stdio.h>
-
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
-{
-	unsigned int	i;
-	unsigned int	j;
-	unsigned int	x;
-	char		*str;
-	
-	str = (char *)haystack;
-	i = 0;
-	j = 0;
-	x = 0;
-	if (ft_strlen(needle) == 0)
-		return (str);
-	while (haystack[i] && j < (len - 1))
-	{		
-		j = 0;
-		while (haystack[i] == needle[j] && haystack[i] && j < (len-1))
-		{
-			if (j == 0)
-				x = i;
-			j++;
-			i++;
-		}
-		i++;
-	}
-	if (j > (len -1))
-	{
-		str += x;
-       		return (str);	
-	}else
-		return (NULL);
-}
-
-int	main(void)
-{
-	char    a[13] = "Hola que tal?";
-	char	b[4] = "Hola";
-	
-	printf("%s \n", a);
-	printf("%s \n", ft_strnstr(a, b, 4));
-	printf("%s \n", a);
-
-	return (0);
-}
 #include <string.h>
 
-int     ft_strncmp(const char *s1, const char *s2, int n)
+char    *ft_strnstr(const char *big, const char *little, size_t len)
 {
-        unsigned int    i;
-
-        i = 0;
-        while (s1[i] != '\0' && s2[i] != '\0' && i < n)
-        {
-                if (s1[i] != s2[i])
-                        return ((unsigned char)s1[i] - (unsigned char)s2[i]);
-                i++;
-        }
-        if (i < n)
-                return ((unsigned char)s1[i] - (unsigned char)s2[i]);
-        return (0);
-}
-
-char    *ft_strnstr(const char *haystack, const char *needle, int len)
-{
-        unsigned int    i;
-        unsigned int    j;
-        unsigned int    x;
         char            *str;
+	char		*str2;
 
-        str = (char *)haystack;
-        i = 0;
-        j = 0;
-        x = 0;
-        if (!needle[i])
+        str = (char *)big;
+	str2 = (char *)little;
+        if (str2[0] == '\0')
                 return (str);
-        while (haystack[i])
-        {
-                j = 0;
-                x = i;
-                while (haystack[i] == needle[j] && haystack[i] && j < (len-1))
-                {
-                  if (ft_strncmp(haystack[i], needle[j], len) == 0)
-                      return (str = str + x);
-                  j++;
-                  i++;
-                }
-                i++;
-        }
+        while (*str)
+        {		
+		if (ft_strncmp(str, str2, len) == 0 && str)
+                  	return (str);
+		else
+			str++;
+	}
+	return (NULL);
 }
 
 int     main(void)
 {
-        char    a[14] = "que quee tal?";
-        char    b[4] = "quee";
+        char    *a = "que quee tal?";
+        char    *b = "quee";
+        char    *c = "que quee tal?";
+        char    *d = "tal?";
+        char    *e = "que quee tal?";
+        char    *f = "t";
+        char    *g = "que quee tal?";
+        char    *h = "z";
+        char    *i = "que quee tal?";
+        char    *j = "qu";
+        char    *k = "que quee tal?";
+        char    *l = "qu";
 
-        printf("%s \n", a);
+	printf("%s \n", a);
         printf("%s \n", ft_strnstr(a, b, 4));
         printf("%s \n", a);
-        return (0);
+        printf("%s \n", c);
+        printf("%s \n", ft_strnstr(c, d, 4));
+        printf("%s \n", c);
+        printf("%s \n", e);
+        printf("%s \n", ft_strnstr(e, f, 1));
+        printf("%s \n", e);
+        printf("%s \n", g);
+        printf("%s \n", ft_strnstr(g, h, 1));
+        printf("%s \n", g);
+        printf("%s \n", i);
+        printf("%s \n", ft_strnstr(i, j, 3));
+        printf("%s \n", k);
+        printf("%s \n", strnstr(k, l, 3));
+        printf("%s \n", k);
+	return (0);
 }
