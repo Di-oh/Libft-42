@@ -6,7 +6,7 @@
 /*   By: dionmart <dionmart@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 15:24:49 by dionmart          #+#    #+#             */
-/*   Updated: 2023/05/11 18:11:16 by dionmart         ###   ########.fr       */
+/*   Updated: 2023/05/13 11:27:08 by dionmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -14,23 +14,31 @@
 
 char    *ft_strnstr(const char *big, const char *little, size_t len)
 {
-        char            *str;
-	char		*str2;
+	char	*str;
+	char	*str2;
+	size_t	i;
+	size_t  j;
 
-        str = (char *)big;
+	str	= "";
+	if (ft_strlcpy(str,(char*)big, len) != 0)
+		return (NULL);
 	str2 = (char *)little;
-        if (str2[0] == '\0')
-                return (str);
-        while (*str)
-        {		
-		if (ft_strncmp(str, str2, len) == 0 && str)
-                  	return (str);
+	i = 0;
+	j = (size_t)ft_strlen(str2);
+
+    if (str2[0] == '\0')
+            return (str);
+    while (*str && i < len)
+    {		
+		if (ft_strncmp(str, str2, j) == 0 && str)
+           	return (str);
 		else
 			str++;
+		i++;
 	}
 	return (NULL);
 }
-
+/*
 int     main(void)
 {
         char    *a = "que quee tal?";
@@ -64,4 +72,4 @@ int     main(void)
         printf("%s \n", strnstr(k, l, 3));
         printf("%s \n", k);
 	return (0);
-}
+}*/
