@@ -19,7 +19,7 @@ char    *ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	i;
 	size_t  j;
 
-	str	= "";
+	str = ""; 
 	if (ft_strlcpy(str,(char*)big, len) != 0)
 		return (NULL);
 	str2 = (char *)little;

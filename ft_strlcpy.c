@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
+#include <string.h>
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
@@ -30,11 +31,17 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 
 int	main(void)
 {
-	const char	src[100] = "Origen";
-	char		dst[4] = "Dest";
+	const char	src[6] = "Origen";
+//	const char	src2[6] = "Origen";
+	char		dst[100] = "Dest";
 	size_t		a;
+//	char		dst2[100] = "Dest";
+//	size_t		b;
 
-
-	a = ft_strlcpy(dst, src, 4);
-	printf ("%s \n", dst);
+	a = ft_strlcpy(dst, src, 7);
+//	b = strlcpy(dst2, src2, 7);
+	printf ("dest: %s \n", dst);
+//	printf ("dest2: %s \n", dst2);
+	printf ("nº de src: %li \n", a);
+//	printf ("nº de src2: %li \n", b);
 }

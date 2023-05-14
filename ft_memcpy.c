@@ -29,3 +29,12 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	}
 	return (pt_dst);
 }
+
+int 	main(void)
+{
+	char	dest[4] = "";
+	char	*src = "Holaa";
+
+	printf ("%s \n", (char *)ft_memcpy((void *)dest, (void *)src, 4));
+	return (0);
+}
