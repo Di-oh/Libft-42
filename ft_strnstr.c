@@ -10,41 +10,36 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
+//#include <string.h>
 
 char    *ft_strnstr(const char *big, const char *little, size_t len)
 {
-	char	*str;
-	char	*str2;
-	size_t	i;
-	size_t  j;
-//	size_t	x;
-
-//	str[] = "Hola";
-//	if (ft_strlcpy(str,(char*)big, len) != 0)
-//		return (NULL);
-	str = (char *)big; 
-	str2 = (char *)little;
-	i = 0;
-	j = (size_t)ft_strlen(str2);
-//	x = (size_t)(ft_strlen(str) - (ft_strlen(str2) * 2));
-//	printf ("x : %li \n", x);
-	if (len < j)
-		return (NULL);
-    if (str2[0] == '\0')
-            return (str);
-    while (*str && i < (len -  j))
-    {	
-
-		if (ft_strncmp(str, str2, j) == 0 && str)
-           	return (str);
-		else
-			str++;
-		i++;
-//		printf("i :  %li \n", i);
-	}
-	return (NULL);
+	size_t  i;
+        size_t  j;
+        
+        i = 0;
+        j = 0;
+        while (big[i] != '\0' && i < len)
+        {
+          j = 0;
+          if (big[i] == little[j] && i < len)
+          {
+            printf("big[i] : %c\n", big[i]);
+            
+            while (big[i + j] == little[j] && (i + j) < len)
+            {
+              printf("big[i +j ] : %c\n", big[i + j]);
+              printf("little[j] : %c\n", little[j]);
+              j++;
+              if (big[i + j] == '\0' && little[j] == '\0')
+                return ((char *)&big[i + j]);
+            }
+          }
+          i++;
+        }
+        return (NULL);
 }
-/*
+
 int     main(void)
 {
 //        char    *a = "que quee tal?";
@@ -57,21 +52,21 @@ int     main(void)
         char    *h = "z";
         char    *i = "que quee tal?";
         char    *j = "qu";
-        char    *k = "que quee tal?";
-        char    *l = "qu";
+//        char    *k = "que quee tal?";
+//        char    *l = "qu";
 
 //	    printf("buscar %s en %s ", b, a);
 //      printf(" devuelve: %s \n", ft_strnstr(a, b, 12));
-        printf("buscar %s en %s ", d, c);
-        printf(" devuelve: %s \n", ft_strnstr(c, d, 12));
-        printf("buscar %s en %s ", f, e);
-        printf(" devuelve: %s \n", ft_strnstr(e, f, 1));
-        printf("buscar %s en %s ", h, g );
-        printf(" devuelve: %s \n", ft_strnstr(g, h, 1));
-        printf("buscar %s en %s ", j, i);
-        printf(" devuelve: %s \n", ft_strnstr(i, j, 3));
-        printf("buscar %s en %s ", l , k);
-        printf(" devuleve: %s \n", strnstr(k, l, 3));
+        printf("** Con len 12, buscar %s en %s\n", d, c);
+        printf(" devuelve: %s \n\n", ft_strnstr(c, d, 12));
+        printf("** Con len 1, buscar %s en %s ", f, e);
+        printf(" devuelve: %s \n\n", ft_strnstr(e, f, 1));
+        printf("** Con len 1, buscar %s en %s ", h, g );
+        printf(" devuelve: %s \n\n", ft_strnstr(g, h, 1));
+        printf("** Con len 3, buscar %s en %s ", j, i);
+        printf(" devuelve: %s \n\n", ft_strnstr(i, j, 3));
+//        printf("buscar %s en %s ", l , k);
+//        printf(" devuleve: %s \n\n", strnstr(k, l, 3));
         return (0);
 
-}*/
+}
