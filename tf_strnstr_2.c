@@ -1,40 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dionmart <dionmart@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/08 13:07:59 by dionmart          #+#    #+#             */
-/*   Updated: 2023/05/14 12:50:42 by dionmart         ###   ########.fr       */
+/*   Created: 2023/05/14 13:29:48 by dionmart          #+#    #+#             */
+/*   Updated: 2023/05/14 13:34:51 by dionmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	char	*pt_dst;
-	char	*pt_src;
-	size_t	i;
-
-	pt_dst = (char *)dst;
-	pt_src = (char *)src;
-	i = 0;
-	if (!pt_dst && !pt_src)
-		return (pt_dst);
-	while (i < n)
-	{
-		pt_dst[i] = pt_src[i];
-		i++;
-	}
-	return (pt_dst);
+	int i;
+	int j;
+	return ();
 }
-/*
-int 	main(void)
-{
-	char	dest[4] = "";
-	char	*src = "Holaa";
 
-	printf ("%s \n", (char *)ft_memcpy((void *)dest, (void *)src, 4));
-	return (0);
-}*/
