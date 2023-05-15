@@ -31,8 +31,8 @@ char    *ft_strnstr(const char *big, const char *little, size_t len)
               printf("big[i +j ] : %c\n", big[i + j]);
               printf("little[j] : %c\n", little[j]);
               j++;
-              if (big[i + j] == '\0' && little[j] == '\0')
-                return ((char *)&big[i + j]);
+              if (big[i + j] == '\0')
+                return ((char *)&big[i]);
             }
           }
           i++;
