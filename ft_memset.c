@@ -22,3 +22,15 @@ void	*ft_memset(void *b, int c, size_t len)
 		pt[i++] = (unsigned char)c;
 	return ((void *)pt);
 }
+/*
+int	main(void)
+{
+	char	str[22] = "Holaaaaaaaaaaaaaaaaaaa";
+	int	c = 'a';
+
+	printf("String antes: %s\n", str);
+	//vamos a substituir desde la posion 1 en 3 caracters el valor inicial por el indicado.
+	ft_memset(str, 'o', 8*sizeof(char));
+	printf ("string despues: %s \n", str);
+	return (0);
+}*/

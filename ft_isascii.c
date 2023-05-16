@@ -17,3 +17,13 @@ int	ft_isascii(int c)
 		return (1);
 	return (0);
 }
+/*
+int	main(void)
+{
+	int	c = 48;
+	int 	d = 128;
+
+	printf("Mirar si el caracter %c, es ascii : %i\n", c, ft_isascii(c));	
+	printf("Mirar si el caracter %c, es ascii : %i\n", d, ft_isascii(d));	
+	return (0);
+}*/

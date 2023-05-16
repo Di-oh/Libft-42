@@ -28,3 +28,13 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
+/*
+int	main(void)
+{
+
+	char	str[] = "Hola";
+	char 	str1[] = "Hola";
+
+	printf("resultado del compare: %i\n", ft_memcmp(str, str1, 4));
+	return (0);
+}*/

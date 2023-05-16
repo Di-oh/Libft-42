@@ -23,3 +23,10 @@ size_t	ft_strlen(const char	*str)
 	}
 	return (i);
 }
+/*
+int	main(void)
+{
+	char a[] = "Hola";
+	printf("cuenta cuantos caracteres tiene el string pasado: %li\n", ft_strlen(a));
+	return (0);
+}*/

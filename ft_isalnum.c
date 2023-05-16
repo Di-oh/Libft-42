@@ -18,11 +18,15 @@ int	ft_isalnum(int num)
 	return (0);*/
 	return (ft_isalpha(num) || ft_isdigit(num));
 }
-
+/*
 int	main(void)
 {
-	printf("%i\n", ft_isalnum(48));
-	printf("%i\n", ft_isalnum(112));
-	printf("%i\n", ft_isalnum(124));
+	int	a = 48;
+	int	b = 112;
+	int	c = 124;
+
+	printf("Comprobar si %c es alnum : %i\n", a, ft_isalnum(a));
+	printf("Comprobar si %c es alnum : %i\n", b, ft_isalnum(b));
+	printf("Comprobar si %c es alnum : %i\n", c, ft_isalnum(c));
 	return (0);
-}
+}*/

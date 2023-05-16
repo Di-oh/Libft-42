@@ -17,3 +17,13 @@ int	ft_isprint(int c)
 		return (1);
 	return (0);
 }
+/*
+int	main(void)
+{
+	int	c = 97;
+	int	d = 200;
+	
+	printf("Comprobar si el caracter %c es printeable: %i\n", c, ft_isprint(c));
+	printf("Comprobar si el caracter %c es printeable: %i\n", d, ft_isprint(d));
+	return (0);
+}*/

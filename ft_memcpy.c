@@ -35,6 +35,6 @@ int 	main(void)
 	char	dest[4] = "";
 	char	*src = "Holaa";
 
-	printf ("%s \n", (char *)ft_memcpy((void *)dest, (void *)src, 4));
+	printf ("%s \n", (char *)ft_memcpy(dest, src, 4));
 	return (0);
 }*/

@@ -17,3 +17,11 @@ int	ft_tolower(int c)
 		c = c + 32;
 	return (c);
 }
+/*
+int	main(void)
+{	
+	int	a = 'A';
+	
+	printf("cambiar %c a minusculas %c \n", a, ft_tolower(a));
+	return (0);
+}*/
