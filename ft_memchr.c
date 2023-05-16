@@ -29,3 +29,11 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (NULL);
 }
+/*
+int	main(void)
+{
+	char	*str= "Dionisia";
+
+	printf("buscar en %s el lugar donde encuentres la n: %s\n", str, (char *)ft_memchr(str, 'n', 5));
+	return (0);
+}*/

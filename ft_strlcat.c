@@ -36,16 +36,13 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	return (ret);
 }
 
-int	main(void)
+/*int	main(void)
 {
 	char	dst1[30] = "";
-//	char	dst2[30] = "";
 	int		len = 10;
 	int		len2 = 7;
 	int		len3 = 11;
 
-//	printf("DIO= %s <> %li\n", dst1, ft_strlcat(dst1, "AAA", len));
-//	printf("ORI= %s <> %li\n", dst2, ft_strlcat(dst2, "AAA", len));
 	printf("**** Caso de dest sin datos, long del dest = 30, src = AAA y len = 10");
 	printf("dest vacio sin cambio= %s\n", dst1);
 	printf("retorno de la funcion  strlcat  %li \n", ft_strlcat(dst1, "AAA", len));
@@ -67,7 +64,7 @@ int	main(void)
 	printf("**** Caso de dest = Hola , src = Angel y len = 11\n");
 	printf("dest sin cambio: %s\n", dst5);
 	printf("retorno de la funcion ft_strlcat %li \n", ft_strlcat(dst5, "Angel", len3));
-	printf("dest con cambio: %s\n", dst5);
+	printf("dest con cambio: %s\n", dst5);*/
 /*	char	dst6[30] = "";
 	printf("**** Caso de dest sin datos, long del dest = 30, src = AAA y len = 10");
 	printf("dest vacio sin cambio= %s\n", dst6);
@@ -92,5 +89,5 @@ int	main(void)
 	printf("retorno de la funcion ft_strlcat %li \n", strlcat(dst9, "Angel", len3));
 	printf("dest con cambio: %s\n", dst9);
 */
-	return (0);
-}
+/*	return (0);
+}*/
