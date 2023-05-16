@@ -24,7 +24,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 		dst[i] = src[i];
 		i++;
 	}
-	dst[i] = '\0';
+	if (i < dstsize)
+		dst[i] = '\0';
 	return (ft_strlen(src));
 }
 /*
@@ -36,7 +37,9 @@ int	main(void)
 
 	a = ft_strlcpy(dst, src, 5);
 
-	const char	src2[] = "Ori";
+	printf ("dest: %s \n", dst);
+	printf ("nº de src: %zu \n", a);*/
+/*	const char	src2[] = "Ori";
 	char		dst2[] = "Dest";
 	size_t		b;
 
@@ -55,4 +58,6 @@ int	main(void)
 	
 	printf ("dest3: %s \n", dst3);
 	printf ("nº de src3: %zu \n", c);
+	*/
+/*	return (0);
 }*/
