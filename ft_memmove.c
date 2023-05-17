@@ -6,7 +6,7 @@
 /*   By: dionmart <dionmart@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 15:35:44 by dionmart          #+#    #+#             */
-/*   Updated: 2023/05/09 11:08:55 by dionmart         ###   ########.fr       */
+/*   Updated: 2023/05/17 11:01:34 by dionmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -20,6 +20,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	i = 0;
 	pt_src = (char *)src;
 	pt_dst = (char *)dst;
+	if (pt_dst == NULL && pt_src == NULL)
+		return ((void *)pt_dst);
 	if (src < dst)
 	{
 		while (len > 0)
