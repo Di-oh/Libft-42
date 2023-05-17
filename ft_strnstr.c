@@ -16,7 +16,9 @@ char    *ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t  i;
         size_t  j;
+	char	*str;
         
+	str = (char *)big;
         i = 0;
         j = 0;
 	if (!little[j])
@@ -24,24 +26,17 @@ char    *ft_strnstr(const char *big, const char *little, size_t len)
         while (big[i] != '\0' && i < len)
         {
           j = 0;
-          if (big[i] == little[j] && i < len)
-          {
-            printf("big[i] : %c\n", big[i]);
-            
-            while (big[i + j] == little[j] && (i + j) < len)
+          while (big[i + j] == little[j] && (i + j) < len)
             {
-              printf("big[i +j ] : %c\n", big[i + j]);
-              printf("little[j] : %c\n", little[j]);
               j++;
-              if (big[i + j] == '\0')
-                return ((char *)&big[i]);
+              if (little[j] == '\0')
+                return (str +=i);
             }
-          }
           i++;
         }
         return (NULL);
 }
-
+/*
 int     main(void)
 {
 //        char    *a = "que quee tal?";
@@ -59,8 +54,8 @@ int     main(void)
 
 //	    printf("buscar %s en %s ", b, a);
 //      printf(" devuelve: %s \n", ft_strnstr(a, b, 12));
-        printf("** Con len 12, buscar %s en %s\n", d, c);
-        printf(" devuelve: %s \n\n", ft_strnstr(c, d, 12));
+        printf("** Con len 13, buscar %s en %s\n", d, c);
+        printf(" devuelve: %s \n\n", ft_strnstr(c, d, 13));
         printf("** Con len 1, buscar %s en %s ", f, e);
         printf(" devuelve: %s \n\n", ft_strnstr(e, f, 1));
         printf("** Con len 1, buscar %s en %s ", h, g );
@@ -71,4 +66,4 @@ int     main(void)
 //        printf(" devuleve: %s \n\n", strnstr(k, l, 3));
         return (0);
 
-}
+}*/
