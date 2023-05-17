@@ -15,27 +15,23 @@
 int	ft_atoi(const char *nptr)
 {
 	char	*str;
-	int		i;
-	int		num;
-	int		positive;
+	int	i;
+	int 	num;
 	
 	str = (char *)nptr;
 	i = 0;
 	num = 0;
-	positive = 0;
-	if (str[i] == '-' || str[i] == '+')
+	if (str[i] == '-' )
 	   	i++;	   
 	while (str[i] != '\0')
 	{
 		num *= 10;
-		if (str[1] == '-' || str[1] == '+')
-			i++;
 		if (str[i] >= '0' && str[i] <= '9')
 			num = num + str[i] - '0' ;
 		i++;
 	}
-	if (str[1] == '-')
-		num -= num;
+	if (str[0] == '-')
+		num = -num;
 	return (num);
 }
 
@@ -46,5 +42,9 @@ int 	main(void)
 	printf("Resultado mi atoi: %i \n", ft_atoi("123"));
 	printf("Resultado atoi: %i \n", atoi("-123"));
 	printf("Resultado mi atoi: %i \n", ft_atoi("-123"));
+	printf("Resultado atoi: %i \n", atoi("+123"));
+	printf("Resultado mi atoi: %i \n", ft_atoi("+123"));
+	printf("Resultado atoi: %i \n", atoi("aaaa"));
+	printf("Resultado mi atoi: %i \n", ft_atoi("aaaa"));
 	return (0);
 }
