@@ -14,32 +14,29 @@
 
 int	ft_atoi(const char *nptr)
 {
-	char	*str;
 	int	i;
 	int 	num;
 	char	sign;
 	
-	str = (char *)nptr;
 	i = 0;
 	num = 0;
 	sign = 0;
-	while (str[i] == ' ')
+	while (nptr[i] == ' ')
 	   	i++;	
-     	if (str[i] == '-')
+     	if (nptr[i] == '-')
 	{
 		sign = 1;
 		i++;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{	
-		num = (num * 10) + str[i] - '0' ;
-		i++;
-	}
+	if (nptr[i] == '+')
+		i++;	
+	while (nptr[i] >= '0' && nptr[i] <= '9')	
+		num = (num * 10) + nptr[i++] - '0';
 	if (sign == 1)
 		num = -num;
 	return (num);
 }
-
+/*
 int 	main(void)
 {
 
@@ -47,7 +44,7 @@ int 	main(void)
 	printf("Resultado mi atoi: %i \n", ft_atoi("123"));
 	printf("Resultado atoi: %i \n", atoi("-123"));
 	printf("Resultado mi atoi: %i \n", ft_atoi("-123"));
-	printf("Resultado atoi: %i \n", ft_atoi(" aaaa"));
+	printf("Resultado atoi: %i \n", atoi(" aaaa"));
 	printf("Resultado mi atoi: %i \n", ft_atoi(" aaaa"));
 	printf("Resultado atoi: %i \n", atoi("-aaa"));
 	printf("Resultado mi atoi: %i \n", ft_atoi("-aaa"));
@@ -59,7 +56,9 @@ int 	main(void)
 	printf("Resultado mi atoi: %i \n", ft_atoi("   + 123 12123"));
 	printf("Resultado atoi: %i \n", atoi("   +*123 12123"));
 	printf("Resultado mi atoi: %i \n", ft_atoi("   +*123 12123"));
-	printf("este caso revisar atoi: %i \n", atoi("+123"));
+	printf("Resultado atoi: %i \n", atoi("+123"));
 	printf("Resultado mi atoi: %i \n", ft_atoi("+123"));
+	printf("Resultado atoi: %i \n", atoi("+*123"));
+	printf("Resultado mi atoi: %i \n", ft_atoi("+*123"));
 	return (0);
-}
+}*/
