@@ -3,7 +3,6 @@
 
 char *ft_strjoin(char const *s1, char const *s2)
 {
-	char	*str;
 	char	*str2;
 	size_t	x;
 	size_t	y;
@@ -11,11 +10,11 @@ char *ft_strjoin(char const *s1, char const *s2)
 	str2 = (char *)s2;
 	x = ft_strlen(s1);
 	y = ft_strlen(s2);
-	str = (char *)malloc(sizeof(char) * (x + y));
-	if (str == NULL)
+	str2 = (char *)malloc(sizeof(char) * (x + y + 1));
+	if (str2 == NULL)
 		return (NULL);
 	printf("antes del ft_strlcat\n");
-	ft_strlcat(str2, s1, (x + y));
+	ft_strlcat(str2, s1, (x + y + 1));
 	printf("despues del ft_strlcat\n");
 	return (str2);
 }
