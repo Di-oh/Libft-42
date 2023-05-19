@@ -3,24 +3,30 @@
 
 char *ft_strjoin(char const *s1, char const *s2)
 {
-	char	*str2;
+	char	*str1;
 	size_t	x;
 	size_t	y;
 	
-	str2 = (char *)s2;
 	x = ft_strlen(s1);
 	y = ft_strlen(s2);
-	str2 = (char *)malloc(sizeof(char) * (x + y + 1));
-	if (str2 == NULL)
+	str1 = (char *)malloc(sizeof(char) * (x + y + 1));
+	if (str1 == NULL)
 		return (NULL);
-	printf("antes del ft_strlcat\n");
-	ft_strlcat(str2, s1, (x + y + 1));
-	printf("despues del ft_strlcat\n");
-	return (str2);
+	ft_strlcpy(str1, s1, (x + 1));
+	ft_strlcat(str1, s2, (x + y + 1));
+	return (str1);
 }
 
 int	main(void)
 {
-	printf("%s\n", ft_strjoin("Hola ", "Dionisia"));
+	char *b;
+	char *c;
+
+	b = ft_strjoin("Hola", "Dionisia");
+	c = ft_strjoin("", "Dionisia");
+	printf("%s\n", b);
+	free(b);
+	printf("%s\n", c);
+	free(c);
 	return (0);
 }

@@ -5,9 +5,9 @@
 char *ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*str;
-	int	len_s;
-	int	i;
-	int	j;
+	unsigned int	len_s;
+	unsigned int	i;
+	size_t	j;
 
 	len_s = ft_strlen(s);
 	i = 0;
@@ -23,8 +23,10 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 }
 
 int	main(void)
-{
+{	
+	char	*a = "Hola";
 
-	printf("%s \n", ft_substr("Hola",1,6));
+	printf("%s \n", ft_substr(a,1,6));
+	free(a);
 	return (0);
 }
