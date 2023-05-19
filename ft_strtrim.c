@@ -5,15 +5,12 @@ char *ft_strtrim(char const *s1, char const *set)
 {
 	char	*str;
 	int	x;
-	int	y;
-	int	i; 
-	int	j;
+	int	y; 
+	int	i;
 
 	i = 0;
-	j = 0;
 	x = ft_strlen(s1);
 	y = ft_strlen(set);
-	z = ft_strnstr(s1, set);
 	str = malloc(sizeof(char) *(x - y + 1));
 	if (str == NULL)
 		return (NULL);
@@ -21,10 +18,11 @@ char *ft_strtrim(char const *s1, char const *set)
 	{
 		while (i < z)
 		{
-			str[i] = s[i];
+			str[i] = s1[i];
 			i++;
 		}
 		i  = i + y;
-		z =ft_strnstr(s1[i], set);
+		s1 += i;
 	}
+	return (str);
 }
