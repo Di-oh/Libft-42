@@ -6,7 +6,7 @@
 /*   By: dionmart <dionmart@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 12:01:57 by dionmart          #+#    #+#             */
-/*   Updated: 2023/05/20 13:31:37 by dionmart         ###   ########.fr       */
+/*   Updated: 2023/05/20 16:17:27 by dionmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -15,7 +15,7 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*str;
 	unsigned int	len_s;
-	int	i;
+	size_t	i;
 
 	i = 0;
 	if (!s)
@@ -38,7 +38,7 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 //	ft_strlcpy(str, s , len + 1);
 	return (str);
 }
-
+/*
 int	main(void)
 {	
 	char	*a = "Hola";
@@ -48,4 +48,4 @@ int	main(void)
 	printf("%s \n", b);
 	free(b);
 	return (0);
-}
+}*/
