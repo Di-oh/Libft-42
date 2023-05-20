@@ -32,9 +32,9 @@ char *ft_strtrim(char const *s1, char const *set)
 	}
 	return (str);
 }
-
+/*
 int	main(void)
 {
 	printf("%s\n", ft_strtrim("lHola", "l"));
 	return (0);
-}
+}*/

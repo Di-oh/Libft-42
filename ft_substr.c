@@ -1,32 +1,43 @@
-
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dionmart <dionmart@student.42barcel>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/20 12:01:57 by dionmart          #+#    #+#             */
+/*   Updated: 2023/05/20 13:31:37 by dionmart         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "libft.h"
 
 char *ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*str;
 	unsigned int	len_s;
-	unsigned int	i;
-	size_t	j;
 
+	if (!s)
+		return (NULL);
 	len_s = ft_strlen(s);
-	i = 0;
-	j = 0;
-	str = (char *)malloc(sizeof(char) * (len));
+	if (len > len_s + 1)
+		len = len_s - start;
+	if (len_s <= start)
+		return (ft_strdup(""));
+	str = (char *)malloc(sizeof(char) * (len + 1));
 	if (str == NULL)
 		return (NULL);
-	while ( i < len_s && i != (start - 1))
-		i++;
-	while (j < len)
-		str[j++] = s[i++];
+	s += start;
+	ft_strlcpy(str, s , len + 1);
 	return (str);
 }
-
+/*
 int	main(void)
 {	
 	char	*a = "Hola";
-
-	printf("%s \n", ft_substr(a,1,6));
-	free(a);
+	char	*b;
+	
+	b = ft_substr(a, 1, 2);
+	printf("%s \n", b);
+	free(b);
 	return (0);
-}
+}*/

@@ -1,19 +1,27 @@
-
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dionmart <dionmart@student.42barcel>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/20 12:50:20 by dionmart          #+#    #+#             */
+/*   Updated: 2023/05/20 12:50:25 by dionmart         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "libft.h"
 
 void *ft_calloc(size_t nmemb, size_t size)
 {
-	char 	*b;
-	size_t	i;
+	void 	*b;
+	size_t			i;
 
 	i = 0;	
-	b = malloc(size * nmemb);
+	b =malloc(size * nmemb);
 	if (b == NULL)
-		return ((void *)b);
-	while (i < size)
-		b[i++] = 0;
-	return ((void *)b);
+		return (b);
+	ft_bzero(b,  size *nmemb);
+	return (b);
 }
 /*
 int	 main(void)

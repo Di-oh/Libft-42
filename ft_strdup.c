@@ -10,6 +10,8 @@ char	*ft_strdup(const char *s)
 	i = 0;
 	len = ft_strlen(s);
 	str = (char *)malloc(sizeof(char) * (len + 1));
+	if (str == NULL)
+		return (NULL);
 	while (i < len)
 	{
 		str[i] = s[i];
@@ -18,7 +20,7 @@ char	*ft_strdup(const char *s)
 	str[i] = '\0';
 	return (str);
 }
-
+/*
 int	main(void)
 {
 	char *s = "Dionisia";
@@ -29,4 +31,4 @@ int	main(void)
 	free(b);
 
 	return (0);
-}
+}*/

@@ -16,7 +16,7 @@ char *ft_strjoin(char const *s1, char const *s2)
 	ft_strlcat(str1, s2, (x + y + 1));
 	return (str1);
 }
-
+/*
 int	main(void)
 {
 	char *b;
@@ -29,4 +29,4 @@ int	main(void)
 	printf("%s\n", c);
 	free(c);
 	return (0);
-}
+}*/

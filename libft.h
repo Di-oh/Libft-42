@@ -6,7 +6,7 @@
 /*   By: dionmart <dionmart@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 11:43:16 by dionmart          #+#    #+#             */
-/*   Updated: 2023/05/17 12:14:24 by dionmart         ###   ########.fr       */
+/*   Updated: 2023/05/20 10:41:47 by dionmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -39,9 +39,9 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 char	*ft_strnstr(const char *dest, const char *src, size_t len);
 int		ft_atoi(const char *nptr);
 char	*ft_strdup(const char *s);
-void 	*ft_calloc(size_t nmemb, size_t size);
-char 	*ft_substr(char const *s, unsigned int start,size_t len);
-char 	*ft_strjoin(char const *s1, char const *s2);
+void	*ft_calloc(size_t nmemb, size_t size);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 
 #endif
