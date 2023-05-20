@@ -15,7 +15,9 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*str;
 	unsigned int	len_s;
+	int	i;
 
+	i = 0;
 	if (!s)
 		return (NULL);
 	len_s = ft_strlen(s);
@@ -27,10 +29,16 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 	if (str == NULL)
 		return (NULL);
 	s += start;
-	ft_strlcpy(str, s , len + 1);
+	while (i < len)
+	{
+		str[i] = s[i]; 
+		i++;
+	}
+	str[i] = '\0';
+//	ft_strlcpy(str, s , len + 1);
 	return (str);
 }
-/*
+
 int	main(void)
 {	
 	char	*a = "Hola";
@@ -40,4 +48,4 @@ int	main(void)
 	printf("%s \n", b);
 	free(b);
 	return (0);
-}*/
+}
