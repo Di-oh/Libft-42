@@ -20,14 +20,14 @@ int	ft_findset(char const *s1, const *set)
 	j = 0;
 	while (s1[i] != '\0' && i < ft_strlen(set))
    	{
-       	j =0;
-      	while (s1[i + j] == set[j] && (i + j) < ft_strlen(set))
+       		j =0;
+      		while (s1[i + j] == set[j] && (i + j) < ft_strlen(set))
 		{
 			j++;
 			if (set[j] == '\0')
-               	return (i);
-       	 }
-       	i++;
+               			return (i);
+       	 	}
+       		i++;
 	}
 	
 }
@@ -46,11 +46,18 @@ char *ft_strtrim(char const *s1, char const *set)
 		return (ft_strdup(""));
 	if (ft_strlen(s1) < ft_strlen(set))
 		return (ft_strdup(""));
-	start = ft_findset(s1, set) + ft_strlen(set);
+	//start = ft_findset(s1, set) + ft_strlen(set);
 	str = malloc(sizeof(char) *(ft_strlen(s1) - ft_strlen(set) + 1));
 	if (str == NULL)
 		return (NULL);
+	str = strchr(s1, set[0]);
+
+	str2 = strrchr(s1, set[0]);
+
 	str = ft_substr(s1, start + ft_strlen(set), );
+	str = memchr(s1, set[0], ft_strlen(s1));
+
+
 	return (str);
 }
 /*
