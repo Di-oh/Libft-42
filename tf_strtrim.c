@@ -6,7 +6,7 @@
 /*   By: dionmart <dionmart@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 16:26:37 by dionmart          #+#    #+#             */
-/*   Updated: 2023/05/21 11:55:00 by dionmart         ###   ########.fr       */
+/*   Updated: 2023/05/21 10:31:19 by dionmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -35,10 +35,10 @@ int	ft_findset(char const *s1, const *set)
 char *ft_strtrim(char const *s1, char const *set)
 {
 	char	*str;
-	int		start;
-	int		j;
-	int		z;
-	int		aux;
+	int	start;
+	int	j;
+	int	z;
+	int aux;
 
 	j = 0;
 	z = 0;
@@ -51,6 +51,7 @@ char *ft_strtrim(char const *s1, char const *set)
 		ft_strrchr(s1, set[i]);
 		i++;
 	}
+	//start = ft_findset(s1, set) + ft_strlen(set);
 	str = malloc(sizeof(char) *(ft_strlen(s1) - ft_strlen(set) + 1));
 	if (str == NULL)
 		return (NULL);

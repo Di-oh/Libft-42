@@ -6,19 +6,19 @@
 /*   By: dionmart <dionmart@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 12:50:20 by dionmart          #+#    #+#             */
-/*   Updated: 2023/05/20 12:50:25 by dionmart         ###   ########.fr       */
+/*   Updated: 2023/05/21 09:50:03 by dionmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-void *ft_calloc(size_t nmemb, size_t size)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	void 	*b;
+	void	*b;
 
-	b =malloc(size * nmemb);
+	b = malloc(size * nmemb);
 	if (b == NULL)
 		return (b);
-	ft_bzero(b,  size *nmemb);
+	ft_bzero(b, size * nmemb);
 	return (b);
 }
 /*

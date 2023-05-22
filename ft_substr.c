@@ -6,16 +6,16 @@
 /*   By: dionmart <dionmart@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 12:01:57 by dionmart          #+#    #+#             */
-/*   Updated: 2023/05/20 16:17:27 by dionmart         ###   ########.fr       */
+/*   Updated: 2023/05/21 10:18:58 by dionmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-char *ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*str;
+	char			*str;
 	unsigned int	len_s;
-	size_t	i;
+	size_t			i;
 
 	i = 0;
 	if (!s)
@@ -31,11 +31,10 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 	s += start;
 	while (i < len)
 	{
-		str[i] = s[i]; 
+		str[i] = s[i];
 		i++;
 	}
 	str[i] = '\0';
-//	ft_strlcpy(str, s , len + 1);
 	return (str);
 }
 /*

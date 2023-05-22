@@ -6,7 +6,7 @@
 /*   By: dionmart <dionmart@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 16:20:40 by dionmart          #+#    #+#             */
-/*   Updated: 2023/05/04 15:27:26 by dionmart         ###   ########.fr       */
+/*   Updated: 2023/05/21 09:50:35 by dionmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -29,7 +29,8 @@ int	main(void)
 	int	c = 'a';
 
 	printf("String antes: %s\n", str);
-	//vamos a substituir desde la posion 1 en 3 caracters el valor inicial por el indicado.
+	//vamos a substituir desde la posion 1 en 3 
+	//caracters el valor inicial por el indicado.
 	ft_memset(str, 'o', 8*sizeof(char));
 	printf ("string despues: %s \n", str);
 	return (0);

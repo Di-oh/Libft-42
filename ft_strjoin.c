@@ -1,12 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dionmart <dionmart@student.42barcel>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/21 09:52:02 by dionmart          #+#    #+#             */
+/*   Updated: 2023/05/21 09:55:48 by dionmart         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "libft.h"
 
-
-char *ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*str1;
 	size_t	x;
 	size_t	y;
-	
+
 	x = ft_strlen(s1);
 	y = ft_strlen(s2);
 	str1 = (char *)malloc(sizeof(char) * (x + y + 1));

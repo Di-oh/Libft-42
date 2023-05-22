@@ -6,7 +6,7 @@
 /*   By: dionmart <dionmart@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 11:14:09 by dionmart          #+#    #+#             */
-/*   Updated: 2023/05/17 10:45:45 by dionmart         ###   ########.fr       */
+/*   Updated: 2023/05/21 10:00:46 by dionmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -20,15 +20,12 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 		return (ft_strlen(src));
 	while (i < (dstsize - 1) && src[i] != '\0')
 	{
-//		printf ("%c \n", src[i]);
 		dst[i] = src[i];
 		i++;
 	}
-//	if (i < dstsize)
 		dst[i] = '\0';
 	return (ft_strlen(src));
 }
-
 /*int	main(void)
 {
 	const char	src[] = "Origen";

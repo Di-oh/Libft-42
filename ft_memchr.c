@@ -6,7 +6,7 @@
 /*   By: dionmart <dionmart@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 12:20:06 by dionmart          #+#    #+#             */
-/*   Updated: 2023/05/08 13:04:49 by dionmart         ###   ########.fr       */
+/*   Updated: 2023/05/21 09:45:51 by dionmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -34,6 +34,7 @@ int	main(void)
 {
 	char	*str= "Dionisia";
 
-	printf("buscar en %s el lugar donde encuentres la n: %s\n", str, (char *)ft_memchr(str, 'n', 5));
+	printf("buscar en %s el lugar donde encuentres la n: %s\n",  
+	str, (char *)ft_memchr(str, 'n', 5));
 	return (0);
 }*/

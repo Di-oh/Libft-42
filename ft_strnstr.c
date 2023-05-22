@@ -6,16 +6,15 @@
 /*   By: dionmart <dionmart@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 15:24:49 by dionmart          #+#    #+#             */
-/*   Updated: 2023/05/20 10:19:42 by dionmart         ###   ########.fr       */
+/*   Updated: 2023/05/21 10:20:04 by dionmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-//#include <string.h>
 
-char    *ft_strnstr(const char *big, const char *little, size_t len)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	size_t  i;
-    size_t  j;
+	size_t	i;
+	size_t	j;
 	char	*str;
 
 	str = (char *)big;
@@ -23,15 +22,15 @@ char    *ft_strnstr(const char *big, const char *little, size_t len)
 	j = 0;
 	if (!little[j])
 		return (str);
-   	while (big[i] != '\0' && i < len)
+	while (big[i] != '\0' && i < len)
 	{
-		j =0;
+		j = 0;
 		while (big[i + j] == little[j] && (i + j) < len)
 		{
 			j++;
 			if (little[j] == '\0')
-				return (str +=i);
-        }
+				return (str += i);
+		}
 		i++;
 	}
 	return (NULL);
