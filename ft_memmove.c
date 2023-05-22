@@ -6,7 +6,7 @@
 /*   By: dionmart <dionmart@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 15:35:44 by dionmart          #+#    #+#             */
-/*   Updated: 2023/05/21 09:48:35 by dionmart         ###   ########.fr       */
+/*   Updated: 2023/05/22 15:49:49 by dionmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -31,10 +31,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		}
 	}
 	else
-	{	
-		while (i++ < len)
-			pt_dst[i] = pt_src[i];
-	}
+		pt_dst = ft_memcpy(pt_dst, pt_src, len);
 	return ((void *)pt_dst);
 }
 /*

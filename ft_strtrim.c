@@ -6,68 +6,65 @@
 /*   By: dionmart <dionmart@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 16:26:37 by dionmart          #+#    #+#             */
-/*   Updated: 2023/05/21 11:55:00 by dionmart         ###   ########.fr       */
+/*   Updated: 2023/05/22 16:14:19 by dionmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-int	ft_findset(char const *s1, const *set)
-{
-	int i;
-	int j;
+static int	ft_findstart(char const *s1, char const *set)
+{	
+	int	ini;
 
-	i = 0;
-	j = 0;
-	while (s1[i] != '\0' && i < ft_strlen(set))
-   	{
-       		j =0;
-      		while (s1[i + j] == set[j] && (i + j) < ft_strlen(set))
-		{
-			j++;
-			if (set[j] == '\0')
-               			return (i);
-       	 	}
-       		i++;
+	ini = 0;
+	if (!s1)
+		return (0);
+	while (s1[ini])
+	{
+		if (!ft_strchr(set, s1[ini]))
+			return (ini);
+		ini++;
 	}
-	
+	return (ini);
 }
 
-char *ft_strtrim(char const *s1, char const *set)
+static int	ft_findend(char const *s1, char const *set)
 {
-	char	*str;
-	int		start;
-	int		j;
-	int		z;
-	int		aux;
+	int	end;
 
-	j = 0;
-	z = 0;
-	if (!s1)
-		return (ft_strdup(""));
-	if (ft_strlen(s1) < ft_strlen(set))
-		return (ft_strdup(""));
-	while (set[i] !=  '\0')
+	if (!s1 || !set)
+		return (0);
+	end = ft_strlen(s1);
+	while (s1[end - 1])
 	{
-		ft_strrchr(s1, set[i]);
-		i++;
+		if (!ft_strrchr(set, s1[end]))
+			return (end);
+		end--;
 	}
-	str = malloc(sizeof(char) *(ft_strlen(s1) - ft_strlen(set) + 1));
-	if (str == NULL)
-		return (NULL);
-	str = strchr(s1, set[0]);
+	return (end);
+}	
 
-	str2 = strrchr(s1, set[0]);
+char	*ft_strtrim(char const *s1, char const *set)
+{
+	int		ini;
+	int		end;
+	char	*str;
 
-	str = ft_substr(s1, start + ft_strlen(set), );
-	str = memchr(s1, set[0], ft_strlen(s1));
-
-
+	end = 0;
+	if (!*s1)
+		return (ft_strdup(""));
+	if (!*set)
+		return (ft_strdup(s1));
+	ini = ft_findstart(s1, set);
+	end = ft_findend(s1, set);
+	str = ft_substr(s1, ini, end - ini + 1);
 	return (str);
 }
 /*
 int	main(void)
 {
 
-	printf("%s\n", ft_strtrim("lHola", "lH"));
+//	printf("%s\n", ft_strtrim("HolaHolacaraccola", "Hola"));
+//	printf("%s\n", ft_strtrim(" 1234567890 ", " "));
+	printf("%s \n", ft_strtrim("",""));
 	return (0);
 }*/

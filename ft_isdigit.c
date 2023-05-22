@@ -9,8 +9,6 @@
 /*   Updated: 2023/05/21 13:01:12 by dionmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
-#include <ctype.h>
 
 int	ft_isdigit(int num)
 {
