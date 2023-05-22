@@ -6,7 +6,7 @@
 /*   By: dionmart <dionmart@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 17:03:19 by dionmart          #+#    #+#             */
-/*   Updated: 2023/05/22 17:53:56 by dionmart         ###   ########.fr       */
+/*   Updated: 2023/05/22 18:09:30 by dionmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 //Lo mas importante para hacer un split es contar palabras
@@ -25,17 +25,26 @@ char	**ft_split(char const *s, char c)
 {
 	int letra;
 	int palabra;	
+	int separador;
 
+	palabra = 0;
 	letra = 1;
 	separador = 0
 	while (s[i] != c)
 	{
 		if (s[i] ==  c && letra == 1)
 		{
-			separador++;
-			letra = 0;
+			if separador == 0
+			{
+				separador = 1;
+				letra = 0;
+				palabra++;
+			}
 		}
 		else 
+		{
 			letra = 1;
+			separador = 0;
+		}
 	}
 }
