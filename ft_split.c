@@ -6,7 +6,7 @@
 /*   By: dionmart <dionmart@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 18:12:53 by dionmart          #+#    #+#             */
-/*   Updated: 2023/05/23 20:17:43 by dionmart         ###   ########.fr       */
+/*   Updated: 2023/05/23 20:52:13 by dionmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -50,20 +50,48 @@ static void ft_free(char **ptr)
 	free(ptr);
 }
 
+static char **ft_fill(char **array, int num, char c, char const *s)
+{
+	int		i;
+	int		x;
+	int 	ini;
+
+	x = 0;
+	while (s && x < num)
+ 	{
+		i = 0;
+		while (s[i] == c)
+			i++;
+		ini = i;
+		while (s[i] != c && s[i] != '\0')
+			i++;
+		array[x] = ft_substr(s, ini, i - ini);
+		if (!array[x++])
+		{
+			ft_free(array);
+			return (NULL);
+		}
+		s += i;
+	}
+	array[x] = NULL;
+	return (array);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char			**array;
-	unsigned int	i;
-	unsigned int	ini;
-	int				x;
+//	unsigned int	i;
+//	unsigned int	ini;
+//	int				x;
 	int				num;
 
-	x = 0;
+//	x = 0;
 	num = ft_count_words(s, c);
 	array = malloc (sizeof(char *) * (num + 1));
-	if (array)
+	if (!array)
 	{
-		while (s && x < num)
+		return (NULL);
+/*		while (s && x < num)
 		{
 			i = 0;
 			while (s[i] == c)
@@ -71,7 +99,6 @@ char	**ft_split(char const *s, char c)
 			ini = i;
 			while (s[i] != c && s[i] != '\0')
 				i++;
-//			printf("caracter = %c ini = %i i = %i \n", s[i], ini, i);
 			array[x] = ft_substr(s, ini, i - ini);
 			if (!array[x++])
 			{
@@ -80,9 +107,10 @@ char	**ft_split(char const *s, char c)
 			}	
 			s += i;
 		}
-		array[x] = NULL;
+		array[x] = NULL; */
 	}
-	return (array);
+	else 
+		return (ft_fill(array, num, c, s));
 }
 /*
 int	main(void)
