@@ -21,30 +21,66 @@
 // Recorro el string i voy cortando y pegando
 #include "libft.h"
 
-char	**ft_split(char const *s, char c)
+static int ft_count_words(char const *s, char c)
 {
-	int letra;
-	int palabra;	
-	int separador;
+	int words;
+	int charcater;
+	int i;
 
-	palabra = 0;
-	letra = 1;
-	separador = 0
-	while (s[i] != c)
+	character = 0;
+	words = 0;
+	i = 0;
+	while (s[i])
 	{
-		if (s[i] ==  c && letra == 1)
+		if(s[i] == c && character = 1)
 		{
-			if separador == 0
-			{
-				separador = 1;
-				letra = 0;
-				palabra++;
-			}
+			words++;
+			character = 0;
 		}
-		else 
-		{
-			letra = 1;
-			separador = 0;
-		}
+		else
+			character = 1;
+	}
+	return words;
+}
+
+void	ft_free(int n)
+{	
+	int i;
+	
+	i = 0;
+	while (i < n)
+	{
+		free(i);
+		i++;
 	}
 }
+
+char	**ft_split(char const *s, char c)
+{
+	unsigned int i;
+	unsigned int ini;
+	size_t len;
+	char	**array;
+	int n_word;
+	
+	n_word = ft_count_words(s, c);
+	i = 0;
+	len = 0;
+
+	while (s && x < n_words)
+	{
+		ini = i;
+		while (s[i] != c)
+		{	
+			len++;
+			i++;
+		}
+		array[x][0] = ft_substr(s, ini, len);
+		x++;
+		len = 0;
+		s += i;
+	}
+	return array;
+}
+
+
