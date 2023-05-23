@@ -5,108 +5,94 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dionmart <dionmart@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/22 17:03:19 by dionmart          #+#    #+#             */
-/*   Updated: 2023/05/22 18:09:30 by dionmart         ###   ########.fr       */
+/*   Created: 2023/05/23 18:12:53 by dionmart          #+#    #+#             */
+/*   Updated: 2023/05/23 19:56:01 by dionmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-//Lo mas importante para hacer un split es contar palabras
-// "hola    que tal" -> 3
-// " hola  que   tal" -> 3
-// "hola   que tal " -> 3
-// "      " -> 0
-// "" -> 0
-//
-// Una vez sabemos el numero de palabras podemos reservar el array de puntero + 1 para el cierre
-//
-// Recorro el string i voy cortando y pegando
 #include "libft.h"
 
-static int ft_count_words(char const *s, char c)
+static int	ft_count_words(char const *s, char c)
 {
-	        int words;
-        int character;
-        int i;
+	int	words;
+	int	character;
+	int	i;
 
-        character = 0;
-        words = 0;
-        i = 0;
-        while (s[i])
-        {
-                if (s[i] != c && character == 0)
-                {
-                        words++;
-                        character = 1;
-                }
-               else
-                        if (s[i] == c )
-                            character = 0;
-              i++;
-        }
-        return words;
-}
-
-void	ft_free(int n, char *ptr)
-{	
-	int i;
-	
+	character = 0;
+	words = 0;
 	i = 0;
-	while (i < n)
+	while (s[i])
 	{
-		free(ptr);
+		if (s[i] != c && character == 0)
+		{
+			words++;
+			character = 1;
+		}
+		else
+		{
+			if (s[i] == c)
+				character = 0;
+		}
 		i++;
 	}
+	return (words);
 }
 
-//char	**ft_split(char const *s, char c)
-void	ft_split(char const *s, char c)
+static char **ft_free(char **ptr)
+{	
+	while (*ptr)
+	{
+		free(*ptr);
+		ptr++;
+	}
+	free(ptr);
+	return (NULL);
+}
+
+char	**ft_split(char const *s, char c)
 {
-//	char **array;
-	unsigned int i;
-        unsigned int ini;
-        int x;
-        int n_word;
+	char			**array;
+	unsigned int	i;
+	unsigned int	ini;
+	int				x;
+	int				num;
 
-        n_word = ft_count_words(s, c);
-        i = 0;
-        x = 0;
-
-        while (s && x < n_word)
-        {
-                ini = i;
-                while (s[i] != c && s[i] != '\0')
-                        i++;
-                if (i > 0)
-                {
-//		    array += x;	
-//                  array[x] = ft_substr(s, ini, i);
-                  printf("%s \n",ft_substr(s, ini, i));
-		  x++;
-                }
-                else 
-                  i++;
-//		if (x > n_word)
-//			array[x] = NULL;
-                s += i;
-                i = 0;
-        }
-	
-//	return (array);
+	x = 0;
+	num = ft_count_words(s, c);
+	array = malloc (sizeof(char *) * (num + 1));
+	if (array)
+	{
+		while (s && x < num)
+		{
+			i = 0;
+			while (s[i] == c)
+				i++;
+			ini = i;
+			while (s[i] != c && s[i] != '\0')
+				i++;
+			if (i == 0)
+				i++;
+			printf("caracter = %c ini = %i i = %i \n ", s[i], ini, i);
+			array[x] = ft_substr(s, ini, i - ini);
+			if (!array[x++])
+				return(ft_free(array));
+			s += i;
+		}
+		array[x] = NULL;
+	}
+	return (array);
 }
 
 int	main(void)
 {
-/*	char **prueba;
+	char **prueba;
 	int i = 0;
-	int n = ft_count_words("Hola que tal", ' ');
+	int n = ft_count_words(" lorem   ipsum dolor     	sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse   ", ' ');
 
-	prueba = ft_split("Hola que tal", ' ');*/
-	ft_split("  Hola que tal", ' ');
-/*	while (i < n)
+	prueba = ft_split(" lorem   ipsum dolor     sit amet, consectetur   adipiscing elit. Sed non risus. Suspendisse   ", ' ');
+	while (i < n)
 	{
-		printf("%s",prueba[i]);
+		printf("%s\n",prueba[i]);
 		i++;
-	}*/
+	}
 	return (0);
 }
-
-
