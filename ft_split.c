@@ -57,9 +57,10 @@ void	ft_free(int n, char *ptr)
 	}
 }
 
-char	**ft_split(char const *s, char c)
+//char	**ft_split(char const *s, char c)
+void	ft_split(char const *s, char c)
 {
-	char **array;
+//	char **array;
 	unsigned int i;
         unsigned int ini;
         int x;
@@ -76,33 +77,35 @@ char	**ft_split(char const *s, char c)
                         i++;
                 if (i > 0)
                 {
-		    array += x;	
-                  array[x] = ft_substr(s, ini, i);
-                  x++;
+//		    array += x;	
+//                  array[x] = ft_substr(s, ini, i);
+                  printf("%s \n",ft_substr(s, ini, i));
+		  x++;
                 }
                 else 
                   i++;
-		if (x > n_word)
-			array[x] = NULL;
+//		if (x > n_word)
+//			array[x] = NULL;
                 s += i;
                 i = 0;
         }
 	
-	return (array);
+//	return (array);
 }
 
 int	main(void)
 {
-	char **prueba;
+/*	char **prueba;
 	int i = 0;
 	int n = ft_count_words("Hola que tal", ' ');
 
-	prueba = ft_split("Hola que tal", ' ');
-	while (i < n)
+	prueba = ft_split("Hola que tal", ' ');*/
+	ft_split("  Hola que tal", ' ');
+/*	while (i < n)
 	{
 		printf("%s",prueba[i]);
 		i++;
-	}
+	}*/
 	return (0);
 }
 
