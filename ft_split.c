@@ -6,7 +6,7 @@
 /*   By: dionmart <dionmart@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 18:12:53 by dionmart          #+#    #+#             */
-/*   Updated: 2023/05/23 19:56:01 by dionmart         ###   ########.fr       */
+/*   Updated: 2023/05/23 20:17:43 by dionmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -37,15 +37,17 @@ static int	ft_count_words(char const *s, char c)
 	return (words);
 }
 
-static char **ft_free(char **ptr)
+static void ft_free(char **ptr)
 {	
-	while (*ptr)
+	int i;
+
+	i = 0;
+	while (ptr[i])
 	{
-		free(*ptr);
-		ptr++;
+		free(ptr[i]);
+		i++;
 	}
 	free(ptr);
-	return (NULL);
 }
 
 char	**ft_split(char const *s, char c)
@@ -69,19 +71,20 @@ char	**ft_split(char const *s, char c)
 			ini = i;
 			while (s[i] != c && s[i] != '\0')
 				i++;
-			if (i == 0)
-				i++;
-			printf("caracter = %c ini = %i i = %i \n ", s[i], ini, i);
+//			printf("caracter = %c ini = %i i = %i \n", s[i], ini, i);
 			array[x] = ft_substr(s, ini, i - ini);
 			if (!array[x++])
-				return(ft_free(array));
+			{
+				ft_free(array);
+				return (NULL);
+			}	
 			s += i;
 		}
 		array[x] = NULL;
 	}
 	return (array);
 }
-
+/*
 int	main(void)
 {
 	char **prueba;
@@ -95,4 +98,4 @@ int	main(void)
 		i++;
 	}
 	return (0);
-}
+}*/
