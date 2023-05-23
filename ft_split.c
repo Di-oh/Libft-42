@@ -23,64 +23,87 @@
 
 static int ft_count_words(char const *s, char c)
 {
-	int words;
-	int charcater;
-	int i;
+	        int words;
+        int character;
+        int i;
 
-	character = 0;
-	words = 0;
-	i = 0;
-	while (s[i])
-	{
-		if(s[i] == c && character = 1)
-		{
-			words++;
-			character = 0;
-		}
-		else
-			character = 1;
-	}
-	return words;
+        character = 0;
+        words = 0;
+        i = 0;
+        while (s[i])
+        {
+                if (s[i] != c && character == 0)
+                {
+                        words++;
+                        character = 1;
+                }
+               else
+                        if (s[i] == c )
+                            character = 0;
+              i++;
+        }
+        return words;
 }
 
-void	ft_free(int n)
+void	ft_free(int n, char *ptr)
 {	
 	int i;
 	
 	i = 0;
 	while (i < n)
 	{
-		free(i);
+		free(ptr);
 		i++;
 	}
 }
 
 char	**ft_split(char const *s, char c)
 {
+	char **array;
 	unsigned int i;
-	unsigned int ini;
-	size_t len;
-	char	**array;
-	int n_word;
-	
-	n_word = ft_count_words(s, c);
-	i = 0;
-	len = 0;
+        unsigned int ini;
+        int x;
+        int n_word;
 
-	while (s && x < n_words)
+        n_word = ft_count_words(s, c);
+        i = 0;
+        x = 0;
+
+        while (s && x < n_word)
+        {
+                ini = i;
+                while (s[i] != c && s[i] != '\0')
+                        i++;
+                if (i > 0)
+                {
+		    array += x;	
+                  array[x] = ft_substr(s, ini, i);
+                  x++;
+                }
+                else 
+                  i++;
+		if (x > n_word)
+			array[x] = NULL;
+                s += i;
+                i = 0;
+        }
+	
+	return (array);
+}
+
+int	main(void)
+{
+	char **prueba;
+	int i = 0;
+	int n = ft_count_words("Hola que tal", ' ');
+
+	prueba = ft_split("Hola que tal", ' ');
+	while (i < n)
 	{
-		ini = i;
-		while (s[i] != c)
-		{	
-			len++;
-			i++;
-		}
-		array[x][0] = ft_substr(s, ini, len);
-		x++;
-		len = 0;
-		s += i;
+		printf("%s",prueba[i]);
+		i++;
 	}
-	return array;
+	return (0);
 }
 
 
