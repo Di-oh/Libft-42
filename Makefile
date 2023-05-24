@@ -6,7 +6,7 @@
 #    By: dionmart <dionmart@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/03 11:18:56 by dionmart          #+#    #+#              #
-#    Updated: 2023/05/22 17:02:56 by dionmart         ###   ########.fr        #
+#    Updated: 2023/05/24 16:45:58 by dionmart         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME 	= libft.a
@@ -17,7 +17,7 @@ SRC 	= ft_strlen.c ft_isalpha.c ft_isalnum.c ft_isdigit.c ft_isascii.c \
 		  ft_strchr.c ft_strrchr.c ft_strncmp.c ft_memchr.c ft_memcpy.c \
 		  ft_memcmp.c ft_memmove.c ft_strlcpy.c ft_strlcat.c ft_strnstr.c \
 		  ft_atoi.c ft_strdup.c ft_calloc.c ft_substr.c ft_strjoin.c \
-		  ft_strtrim.c ft_split.c
+		  ft_strtrim.c ft_split.c ft_itoa.c
 
 OBJS = $(SRC:.c=.o)
 CC = gcc
