@@ -6,78 +6,74 @@
 /*   By: dionmart <dionmart@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 11:01:50 by dionmart          #+#    #+#             */
-/*   Updated: 2023/05/24 19:15:47 by dionmart         ###   ########.fr       */
+/*   Updated: 2023/05/24 21:15:51 by dionmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-static int	ft_count_num(int i)
+static int	ft_count_num(int n)
 {
-	int n;
-	n = 0;
+	int	i;
 
-	if (i == 0)
-		n = 1;
-	else
+	i = 0;
+	if (n == 0)
+		return (1);
+	if (n < 0)
+		i = 1;
+	while (n != 0)
 	{
-		if (i < 0)
-	  	 	i = i * -1;
-		 while (i != 0)
-		 {
-			 i = i / 10;
-		 	n++;
-		 }
-	} 		 
-	return (n);
+		n = n / 10;
+		i++;
+	}
+	return (i);
 }
 
-char *ft_itoa(int n)
+static void	ft_fillarray(char *str, int n, int digits)
 {
-	char	*str;
-	int		num;
-	int		r;
-	int		x;
+	int	modul;
+	int	x;
 
 	x = 0;
+	modul = 0;
 	if (n < 0)
-	    num = ft_count_num(n) + 2;
-	else
-		num = ft_count_num(n) + 1;
-	str = ft_calloc(num, sizeof(char));
-	if (n == -2147483648)
-		return ("-2147483648");
-	else
-	{
-	 	if (n == 0)
-			 str[0] = n % 10 + '0';
-	 	else 
-	 	{
-			if (n < 0)
-			{	
-				n = n * -1;
-				str[0] = '-';
-				x = 1;
-			}
-			num = num - 2;
-			while (num >= x)
-			{
-				r = n % 10;
-				n = n / 10;
-				str[num] =  r + '0';
-				num--;
-			}
-	 	}
+	{	
+		n = n * -1;
+		str[0] = '-';
+		x = 1;
 	}
+	digits = digits - 2;
+	while (digits >= x)
+	{
+		modul = n % 10;
+		n = n / 10;
+		str[digits--] = modul + '0';
+	}
+}	
+
+char	*ft_itoa(int n)
+{
+	char	*str;
+	int		digits;
+
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
+	if (n == 0)
+		return (ft_strdup("0"));
+	digits = ft_count_num(n) + 1;
+	str = ft_calloc(digits, sizeof(char));
+	if (!str)
+		return (NULL);
+	ft_fillarray(str, n, digits);
 	return (str);
 }
-
+/*
 int	main(void)
 {
 	char *str;
 
-	str = ft_itoa(-2147483648);
+	str = ft_itoa(-2147483648LL);
 	printf("%s \n", str);
 	free(str);
 	return (0);
 
-}
+}*/
