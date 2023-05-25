@@ -1,44 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dionmart <dionmart@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/21 09:51:17 by dionmart          #+#    #+#             */
-/*   Updated: 2023/05/25 11:55:54 by dionmart         ###   ########.fr       */
+/*   Created: 2023/05/25 13:04:21 by dionmart          #+#    #+#             */
+/*   Updated: 2023/05/25 13:37:05 by dionmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-char	*ft_strdup(const char *s)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	char	*str;
-	int		i;
-	int		len;
+	int	i;
+	int len;
 
 	i = 0;
 	len = ft_strlen(s);
-	str = malloc(sizeof(char) * (len + 1));
-	if (str == NULL)
-		return (NULL);
 	while (i < len)
 	{
-		str[i] = s[i];
+		f(i, &s[i]);
 		i++;
 	}
-	str[i] = '\0';
-	return (str);
 }
-/*
+
+void	ft_pasar(unsigned int n, char*)
+{
+	char a;
+
+	if (n % 2 == 0)
+		a = ft_toupper(a);
+	return (a);
+}
+
 int	main(void)
 {
-	char *s = "Dionisia";
-	char *b;
-	
-	b = ft_strdup(s);
-	printf("String %s, se duplica en %s\n", s, b);
-	free(b);
+	char	*str;
 
+	str = "Holaa";
+	ft_striteri(str, &ft_pasar);
 	return (0);
-}*/
+}

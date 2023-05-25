@@ -6,10 +6,9 @@
 /*   By: dionmart <dionmart@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 16:01:08 by dionmart          #+#    #+#             */
-/*   Updated: 2023/05/03 16:18:37 by dionmart         ###   ########.fr       */
+/*   Updated: 2023/05/25 11:43:00 by dionmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
 
 int	ft_isprint(int c)
 {

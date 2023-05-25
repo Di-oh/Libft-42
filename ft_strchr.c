@@ -6,10 +6,10 @@
 /*   By: dionmart <dionmart@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 14:06:50 by dionmart          #+#    #+#             */
-/*   Updated: 2023/05/04 17:13:15 by dionmart         ###   ########.fr       */
+/*   Updated: 2023/05/25 12:00:46 by dionmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h" 
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {

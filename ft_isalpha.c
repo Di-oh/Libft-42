@@ -6,11 +6,10 @@
 /*   By: dionmart <dionmart@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 11:14:13 by dionmart          #+#    #+#             */
-/*   Updated: 2023/05/03 13:12:57 by dionmart         ###   ########.fr       */
+/*   Updated: 2023/05/25 11:40:55 by dionmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-#include <ctype.h>
 
 int	ft_isalpha(int num)
 {

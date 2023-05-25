@@ -6,10 +6,9 @@
 /*   By: dionmart <dionmart@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 12:39:54 by dionmart          #+#    #+#             */
-/*   Updated: 2023/05/04 15:14:21 by dionmart         ###   ########.fr       */
+/*   Updated: 2023/05/25 11:41:58 by dionmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
 
 int	ft_toupper(int c)
 {	

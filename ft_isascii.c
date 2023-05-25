@@ -6,10 +6,9 @@
 /*   By: dionmart <dionmart@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 15:46:46 by dionmart          #+#    #+#             */
-/*   Updated: 2023/05/03 15:59:49 by dionmart         ###   ########.fr       */
+/*   Updated: 2023/05/25 11:42:42 by dionmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
 
 int	ft_isascii(int c)
 {

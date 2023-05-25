@@ -6,11 +6,10 @@
 /*   By: dionmart <dionmart@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 17:34:12 by dionmart          #+#    #+#             */
-/*   Updated: 2023/05/03 18:32:03 by dionmart         ###   ########.fr       */
+/*   Updated: 2023/05/25 11:47:28 by dionmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-#include <string.h>
 
 void	ft_bzero(void *s, size_t n)
 {
