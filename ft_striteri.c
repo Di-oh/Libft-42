@@ -25,13 +25,11 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 	}
 }
 
-void	ft_pasar(unsigned int n, char*)
+void	ft_pasar(unsigned int n, char *a)
 {
-	char a;
-
+	printf("%c \n", *a);
 	if (n % 2 == 0)
-		a = ft_toupper(a);
-	return (a);
+		*a = ft_toupper(*a);
 }
 
 int	main(void)
@@ -40,5 +38,6 @@ int	main(void)
 
 	str = "Holaa";
 	ft_striteri(str, &ft_pasar);
+	printf("%s", str);
 	return (0);
 }
