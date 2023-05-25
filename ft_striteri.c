@@ -29,7 +29,7 @@ void	ft_pasar(unsigned int n, char *a)
 {
 	printf("%c \n", *a);
 	if (n % 2 == 0)
-		*a = ft_toupper(*a);
+		*a = 32;
 }
 
 int	main(void)
