@@ -12,5 +12,12 @@
 #include "libft.h"
 t_list	*ft_lstnew(void *content)
 {
+	struct s_list	list;
+	int		len_cont;
+	char		*str;
+
+	str = malloc(sizeof(char) * len_cont);
+	if (str == NULL)
+		return (str);
 
 }
