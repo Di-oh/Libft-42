@@ -6,7 +6,7 @@
 /*   By: dionmart <dionmart@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 13:04:21 by dionmart          #+#    #+#             */
-/*   Updated: 2023/05/25 13:37:05 by dionmart         ###   ########.fr       */
+/*   Updated: 2023/05/26 12:23:34 by dionmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -14,7 +14,7 @@
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	int	i;
-	int len;
+	int	len;
 
 	i = 0;
 	len = ft_strlen(s);
@@ -24,20 +24,21 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 		i++;
 	}
 }
-
+/*
 void	ft_pasar(unsigned int n, char *a)
 {
 	printf("%c \n", *a);
 	if (n % 2 == 0)
-		*a = 32;
+		*a = ft_toupper(*a);
 }
 
 int	main(void)
 {
-	char	*str;
+	char	str;
 
-	str = "Holaa";
+	str = ft_strdup("Holaa");
 	ft_striteri(str, &ft_pasar);
 	printf("%s", str);
+	free(str);
 	return (0);
-}
+}*/
