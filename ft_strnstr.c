@@ -22,10 +22,10 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	j = 0;
 	if (!little[j])
 		return (str);
-	while (big[i] != '\0' && i < len)
+	while ((big[i] != '\0') && (i < len))
 	{
 		j = 0;
-		while (big[i + j] == little[j] && (i + j) < len)
+		while ((big[i + j] == little[j]) && ((i + j) < len))
 		{
 			j++;
 			if (little[j] == '\0')

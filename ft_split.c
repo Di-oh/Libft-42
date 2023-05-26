@@ -22,7 +22,7 @@ static int	ft_count_words(char const *s, char c)
 	i = 0;
 	while (s[i])
 	{
-		if (s[i] != c && character == 0)
+		if ((s[i] != c) && (character == 0))
 		{
 			words++;
 			character = 1;
@@ -63,7 +63,7 @@ static char	**ft_fill(char **array, int num, char c, char const *s)
 		while (s[i] == c)
 			i++;
 		ini = i;
-		while (s[i] != c && s[i] != '\0')
+		while ((s[i] != c) && (s[i] != '\0'))
 			i++;
 		array[x] = ft_substr(s, ini, i - ini);
 		if (!array[x++])
