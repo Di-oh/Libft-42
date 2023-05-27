@@ -6,7 +6,7 @@
 #    By: dionmart <dionmart@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/03 11:18:56 by dionmart          #+#    #+#              #
-#    Updated: 2023/05/26 12:53:33 by dionmart         ###   ########.fr        #
+#    Updated: 2023/05/27 11:10:35 by dionmart         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME 	= libft.a
@@ -23,7 +23,7 @@ SRC 	= ft_strlen.c ft_isalpha.c ft_isalnum.c ft_isdigit.c ft_isascii.c \
 BONUS	= ft_lstnew.c
 
 OBJS = $(SRC:.c=.o)
-OBJ_B = $(BONUS:.c=.o)
+#OBJ_B = $(BONUS:.c=.o)
 CC = cc
 CFLAGS = -Wall -Wextra -Werror 
 
@@ -39,8 +39,8 @@ all:$(NAME)
 $(NAME): $(OBJS)
 	@ar rcs $(NAME) $(OBJS) 
 
-bonus: $(NAME)
-	@ar rcs $(NAME) $(OBJ_B) 
+#bonus: $(NAME)
+#	@ar rcs $(NAME) $(OBJ_B) 
 
 clean:
 	@rm -rf $(OBJS) $(OBJ_B)
