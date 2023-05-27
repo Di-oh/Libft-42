@@ -6,7 +6,7 @@
 /*   By: dionmart <dionmart@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 11:43:16 by dionmart          #+#    #+#             */
-/*   Updated: 2023/05/27 11:17:25 by dionmart         ###   ########.fr       */
+/*   Updated: 2023/05/27 17:25:28 by dionmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -57,4 +57,5 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }	t_list;
+t_list	*ft_lstnew(void *content);
 #endif

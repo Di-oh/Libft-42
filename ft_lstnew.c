@@ -6,18 +6,19 @@
 /*   By: dionmart <dionmart@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 12:57:10 by dionmart          #+#    #+#             */
-/*   Updated: 2023/05/27 11:08:55 by dionmart         ###   ########.fr       */
+/*   Updated: 2023/05/27 17:46:03 by dionmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/*#include "libft.h"
+#include "libft.h"
+
 t_list	*ft_lstnew(void *content)
 {
-	struct s_list	list;
-	int		len_cont;
-	char		*str;
+	struct s_list	*list;
 
-	str = malloc(sizeof(char) * len_cont);
-	if (str == NULL)
-		return (str);
-
-}*/
+	list = malloc(sizeof(struct s_list));
+	if (list == NULL)
+		return (list);
+	list -> content = content;
+	list -> next = NULL;
+	return (list);
+}
