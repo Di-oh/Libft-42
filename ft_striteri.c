@@ -24,7 +24,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 		i++;
 	}
 }
-/*
+
 void	ft_pasar(unsigned int n, char *a)
 {
 	printf("%c \n", *a);
@@ -34,11 +34,11 @@ void	ft_pasar(unsigned int n, char *a)
 
 int	main(void)
 {
-	char	str;
+	char	*str;
 
 	str = ft_strdup("Holaa");
 	ft_striteri(str, &ft_pasar);
 	printf("%s", str);
 	free(str);
 	return (0);
-}*/
+}
