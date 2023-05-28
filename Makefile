@@ -6,7 +6,7 @@
 #    By: dionmart <dionmart@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/03 11:18:56 by dionmart          #+#    #+#              #
-#    Updated: 2023/05/27 17:39:46 by dionmart         ###   ########.fr        #
+#    Updated: 2023/05/28 13:00:03 by dionmart         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME 	= libft.a
@@ -20,7 +20,7 @@ SRC 	= ft_strlen.c ft_isalpha.c ft_isalnum.c ft_isdigit.c ft_isascii.c \
 		  ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c \
 		  ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
 
-BONUS	= ft_lstnew.c
+BONUS	= ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c
 
 OBJS = $(SRC:.c=.o)
 OBJ_B = $(BONUS:.c=.o)
@@ -39,6 +39,7 @@ all:$(NAME)
 $(NAME): $(OBJS)
 	@ar rcs $(NAME) $(OBJS) 
 
+#'$^' es una lista de todos los requisitos previos de la regla
 bonus: $(NAME) $(BONUS) $(OBJ_B)
 	@ar rcs $(NAME) $^
 

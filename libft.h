@@ -6,7 +6,7 @@
 /*   By: dionmart <dionmart@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 11:43:16 by dionmart          #+#    #+#             */
-/*   Updated: 2023/05/27 17:25:28 by dionmart         ###   ########.fr       */
+/*   Updated: 2023/05/28 12:59:23 by dionmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -16,7 +16,6 @@
 # include <unistd.h>
 # include <stdio.h>
 # include <string.h>
-# include <fcntl.h>
 
 size_t	ft_strlen(const char *str);
 int		ft_isalpha(int num);
@@ -58,4 +57,7 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 t_list	*ft_lstnew(void *content);
+void	ft_lstadd_front(t_list **lst, t_list *new);
+int		ft_lstsize(t_list *lst);
+t_list	*ft_lstlast(t_list *lst);
 #endif
