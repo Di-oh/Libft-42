@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dionmart <dionmart@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/28 11:00:23 by dionmart          #+#    #+#             */
-/*   Updated: 2023/05/29 17:52:19 by dionmart         ###   ########.fr       */
+/*   Created: 2023/05/29 17:54:01 by dionmart          #+#    #+#             */
+/*   Updated: 2023/05/29 18:15:14 by dionmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	new -> next = *lst;
-	*lst = new;
-}
-/*
-int main(void)
-{ 
-	t_list *list1 = ft_lstnew(ft_strdup("Hola"));
-	ft_lstadd_front(&list1, ft_lstnew(ft_strdup("Nueva")));
-	while (list1)
+	while (*lst)
 	{
-		printf ("%s", (char *)list1->content);
-			list1 = list1->next;
+		del(lst->content);
+		lst->next;
 	}
-	return (0);
-}*/
+	free(*lst);
+}
+
+void	borra(void *cosa)
+{
+	free(cosa);
+}

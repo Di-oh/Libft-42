@@ -6,7 +6,7 @@
 /*   By: dionmart <dionmart@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 12:57:10 by dionmart          #+#    #+#             */
-/*   Updated: 2023/05/27 17:46:03 by dionmart         ###   ########.fr       */
+/*   Updated: 2023/05/29 16:36:48 by dionmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -25,7 +25,7 @@ t_list	*ft_lstnew(void *content)
 /*
 int	main(void)
 {
-	t_list *list_1 = ft_lstnew("Hola");
+	t_list *list_1 = ft_lstnew(ft_strdup("Hola"));
 	printf("%s",(char *)list_1->content);
 
 	return (0);
