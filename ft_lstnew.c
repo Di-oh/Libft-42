@@ -22,3 +22,11 @@ t_list	*ft_lstnew(void *content)
 	list -> next = NULL;
 	return (list);
 }
+/*
+int	main(void)
+{
+	t_list *list_1 = ft_lstnew("Hola");
+	printf("%s",(char *)list_1->content);
+
+	return (0);
+}*/
