@@ -18,29 +18,44 @@ void	deletecontent(char *str)
 	free(str);
 }
 
+void	deletenodo(void *nodo)
+{
+	free(nodo);
+}
+
 void	printnode(t_list *node)
 {
 	printf("=== %p ===\n",node);
-	printf("CONTENT: %s\n",node->content);
+	printf("CONTENT: %s\n",(char *)node->content);
 	printf("NEXT: %p\n",node->next);
 	printf("============\n");
 }
 
 void printlist(t_list *node)
 {
+	printf("****Imprimir lista*******\n");
 	while(node != NULL)
 	{
 		printnode(node);
 		node = node->next;
 	}
+	printf("*************************\n");
 }
+
+
 
 int main(void)
 {
 	t_list *root;
-	root = ft_lstnew(strdup("hola"));
-	ft_lstadd_front(&root,ft_lstnew(strdup("adios")));
+	int	i;
+	root = ft_lstnew(ft_strdup("hola"));
+	ft_lstadd_front(&root,ft_lstnew(ft_strdup("adios")));
+	ft_lstadd_back(&root, ft_lstnew(ft_strdup("Añadir al final")));
 	printlist(root);
-	deletecontent(root->content);
+//	ft_lstdelone(root, &deletenodo);
+//	printlist(root);
+//	deletecontent(root->content);
+	printlist(root);
+	printf("Numero de nodos en lista: %d\n", ft_lstsize(root));
 	free(root);
 }

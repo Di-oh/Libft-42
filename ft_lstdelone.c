@@ -16,8 +16,8 @@ void ft_lstdelone(t_list *lst, void (*del)(void*))
 	del(lst->content);
 	free(lst);
 }
-
-void	borra(void *cosa)
+/*
+void	borra(void *nodo)
 {
-	free(cosa);
-}
+	free(nodo);
+}*/

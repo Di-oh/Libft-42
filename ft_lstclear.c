@@ -13,15 +13,14 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	while (*lst)
+	t_list	**list;
+	t_list	*nodo;
+
+	list = lst;
+	while (list)
 	{
-		del(lst->content);
-		lst->next;
+		ft_lstdelone(list, nodo->content);
+		nodo->next;
 	}
 	free(*lst);
-}
-
-void	borra(void *cosa)
-{
-	free(cosa);
 }
