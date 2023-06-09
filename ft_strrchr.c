@@ -27,11 +27,11 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return (NULL);
 }
-/*
+
 int	main(void)
 {
 	char 	str[] = "Antonio";
 	
 	printf("buscar la ultima t de antonio: %s\n", ft_strrchr(str, 't'));
 	return (0);
-}*/
+}

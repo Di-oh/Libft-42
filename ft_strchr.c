@@ -32,7 +32,7 @@ char	*ft_strchr(const char *s, int c)
 	}
 	return (NULL);
 }
-/*
+
 int	main(void)
 {
 	char	*s = "Holaaa";
@@ -40,4 +40,4 @@ int	main(void)
 
 	printf("Buscar la letra %c en %s resultado: %s\n", c, s, ft_strchr(s, c));
 	return (0);
-}*/
+}
