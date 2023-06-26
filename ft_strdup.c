@@ -33,7 +33,7 @@ char	*ft_strdup(const char *s)
 /*
 int	main(void)
 {
-	char *s = "Dionisia";
+	char *s = "Polinesia";
 	char *b;
 	
 	b = ft_strdup(s);
