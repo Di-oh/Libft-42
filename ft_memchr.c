@@ -32,7 +32,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 /*
 int	main(void)
 {
-	char	*str= "Dionisia";
+	char	*str= "polinesia";
 
 	printf("buscar en %s el lugar donde encuentres la n: %s\n",  
 	str, (char *)ft_memchr(str, 'n', 5));
